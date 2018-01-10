@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -16,7 +17,18 @@ and open the template in the editor.
         <div class="container">
             <div class="col-md-offset-3 col-md-6">
                 <h1>Pizza</h1>
-
+                <%
+                    Date d = new Date();
+                    out.print(d);
+                %>
+                <br>  
+                <%= new Date() %>
+                  
+                <jsp:useBean class="java.util.Date" id="theDate"/>
+                <h2>
+                <%= theDate %>
+                </h2>
+                
                 <form action="LoginServlet" method="POST">
                     <input type="text" name="login" class="form-control" placeholder="Username ..."/>
                     <input type="password" name="password" class="form-control" placeholder="Password ..."/>
